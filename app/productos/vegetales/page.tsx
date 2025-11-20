@@ -72,7 +72,7 @@ const productosVegetales = [
   {
     id: 310,
     nombre: "Espinaca (kg)",
-    codigo: 3.5,
+    precio: 3.5,
     imagen: "https://images.unsplash.com/photo-1599599810694-b5ac4dd64e63?w=400&q=80",
     descripcion: "Espinaca fresca y orgánica",
   },
