@@ -1,0 +1,141 @@
+/* Estilos del pie de página */
+.footer {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 40px 0 20px 0;
+  margin-top: 60px;
+}
+
+.footer-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-seccion h3,
+.footer-seccion h4 {
+  color: var(--color-secundario);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.footer-seccion p {
+  margin-bottom: 10px;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.footer-seccion ul {
+  list-style: none;
+}
+
+.footer-seccion ul li {
+  margin-bottom: 10px;
+}
+
+.footer-seccion a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-seccion a:hover {
+  color: var(--color-secundario);
+}
+
+/* Actualizar estilos para redes sociales con iconos y imagen responsiva */
+.redes-sociales-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px; /* Actualizado de 15px a 12px */
+}
+
+/* Mejorado el estilo del icono social para asegurar visibilidad correcta del SVG */
+.red-social-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.red-social-icono:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Asegurado que los SVG dentro del icono se rendericen correctamente */
+.red-social-icono svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.imagen-siguenos {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.footer-base {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  .footer-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .redes-sociales {
+    flex-wrap: wrap;
+  }
+
+  .imagen-siguenos {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-seccion h3,
+  .footer-seccion h4 {
+    font-size: 1rem;
+  }
+
+  .red-social-icono {
+    width: 40px;
+    height: 40px;
+  }
+
+  .red-social-icono svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .imagen-siguenos {
+    max-width: 120px;
+  }
+}

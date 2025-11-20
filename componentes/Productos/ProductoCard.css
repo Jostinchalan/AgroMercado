@@ -1,0 +1,283 @@
+/* Estilos mejorados para tarjeta de producto */
+
+.tarjeta-producto {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de imagen */
+.imagen-contenedor {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.imagen-producto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imagen-producto.cargada {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.tarjeta-producto:hover .imagen-producto {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Información del producto */
+.info-producto {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.nombre-producto {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d5016;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.descripcion-producto {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 15px;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+/* Precio */
+.precio-seccion {
+  margin-bottom: 15px;
+}
+
+.precio {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ff6b35;
+}
+
+/* Updated button styles to stack vertically as shown in reference image */
+.botones-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.boton-agregar {
+  width: 100%;
+  background-color: #2d5016;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.boton-agregar:hover {
+  background-color: #1a4d1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 106, 45, 0.3);
+}
+
+.boton-agregar:active {
+  transform: translateY(0);
+}
+
+.boton-ver {
+  width: 100%;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-ver:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.3);
+}
+
+.boton-ver:active {
+  transform: translateY(0);
+}
+
+/* Old button kept for backwards compatibility */
+.boton-comprar {
+  background-color: #ff6b35;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.boton-comprar:hover {
+  background-color: #ff5520;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.boton-comprar:active {
+  transform: translateY(0);
+}
+
+/* Notificación de producto agregado mejorada */
+.notificacion-producto-agregado {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #2d5016;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out, slideOutRight 0.3s ease-in 2.7s forwards;
+  font-weight: 600;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Agregando estilos para especificaciones y badge de disponibilidad */
+
+.badge-disponibilidad {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(45, 106, 45, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.especificaciones-producto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.especificacion-item {
+  background-color: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .info-producto {
+    padding: 15px;
+  }
+
+  .nombre-producto {
+    font-size: 1rem;
+  }
+
+  .precio {
+    font-size: 1.3rem;
+  }
+
+  .notificacion-producto-agregado {
+    right: 10px;
+    left: 10px;
+    top: 70px;
+  }
+}
+
+/* Responsive para tabletas */
+@media (max-width: 768px) {
+  .imagen-contenedor {
+    height: 180px;
+  }
+
+  .badge-disponibilidad {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+  .imagen-contenedor {
+    height: 150px;
+  }
+
+  .especificaciones-producto {
+    gap: 5px;
+  }
+
+  .especificacion-item {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+}

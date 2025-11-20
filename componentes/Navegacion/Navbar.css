@@ -1,0 +1,176 @@
+/* Navbar profesional minimalista - Blanco y limpio */
+
+.navbar {
+  background-color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar-contenedor {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo profesional */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  transition: opacity 0.3s;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+.logo-imagen {
+  width: 50px;
+  height: 50px;
+  background-color: #1b4d00;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.logo-texto {
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Menú de navegación */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 45px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #0084a7;
+}
+
+/* Botón carrito con color azul teal en lugar de naranja */
+.boton-carrito {
+  background-color: var(--color-acento);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.boton-carrito:hover {
+  background-color: #006a89;
+}
+
+.badge-carrito {
+  background-color: white;
+  color: #0084a7;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Menú hamburguesa para móvil */
+.hamburguesa {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburguesa span {
+  width: 24px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburguesa.activo span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburguesa.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguesa.activo span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .menu.activo {
+    max-height: 400px;
+  }
+
+  .menu li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+  }
+
+  .menu a {
+    color: #333;
+  }
+
+  .boton-carrito {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
